@@ -1,0 +1,93 @@
+/* Mobile floating bar */
+.floating-mobile {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  background-color: var(--color-gold);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.floating-mobile.visible {
+  transform: translateY(0);
+}
+
+.floating-mobile-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.floating-mobile-btn.kakao {
+  background-color: #FEE500;
+}
+
+/* Desktop floating button */
+.floating-desktop {
+  display: none;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 900;
+  width: 56px;
+  height: 56px;
+  background-color: #FEE500;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.4s ease, width 0.3s ease, border-radius 0.3s ease;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.floating-desktop.visible {
+  opacity: 1;
+}
+
+.floating-desktop-text {
+  display: none;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-black);
+  white-space: nowrap;
+  margin-left: 8px;
+}
+
+.floating-desktop:hover {
+  width: 180px;
+  border-radius: 28px;
+}
+
+.floating-desktop:hover .floating-desktop-text {
+  display: inline;
+}
+
+@media (max-width: 767px) {
+  .floating-mobile {
+    display: flex;
+  }
+
+  .floating-desktop {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .floating-desktop {
+    display: flex;
+  }
+}

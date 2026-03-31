@@ -1,0 +1,724 @@
+/* ======================== Hero ======================== */
+.treat-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.treat-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.treat-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.treat-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.55);
+}
+
+.treat-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.treat-hero-title {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.treat-hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ======================== Tabs ======================== */
+.treat-tabs-wrap {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 100;
+  background: var(--color-warm-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.treat-tabs {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.treat-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.treat-tab {
+  padding: 18px 24px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+  flex-shrink: 0;
+}
+
+.treat-tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  transition: width 0.3s;
+}
+
+.treat-tab.active {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.treat-tab.active::after {
+  width: 100%;
+}
+
+.treat-tab:hover {
+  color: var(--color-text);
+}
+
+/* ======================== Content ======================== */
+.treat-content {
+  background: var(--color-warm-white);
+  min-height: 60vh;
+}
+
+/* Tab fade transition */
+.treat-category {
+  animation: tabFadeIn 0.4s ease-out;
+}
+
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Category intro banner (pigment, acne, disease) */
+.treat-cat-banner {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.treat-cat-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.treat-cat-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(10, 10, 10, 0.75) 0%,
+    rgba(10, 10, 10, 0.45) 60%,
+    rgba(10, 10, 10, 0.25) 100%
+  );
+}
+
+.treat-cat-banner-text {
+  position: absolute;
+  bottom: 32px;
+  left: 32px;
+  z-index: 2;
+}
+
+.treat-cat-banner-title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.treat-cat-banner-desc {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+.treat-cat-intro {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: 40px;
+  max-width: 720px;
+}
+
+/* ======================== Signature Cards (alternating layout) ======================== */
+.sig-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding: 48px 0;
+  border-bottom: 1px solid var(--color-border);
+  align-items: start;
+}
+
+.sig-card:last-child {
+  border-bottom: none;
+}
+
+.sig-card--reversed {
+  direction: rtl;
+}
+
+.sig-card--reversed > * {
+  direction: ltr;
+}
+
+.sig-card-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-warm-beige);
+}
+
+.sig-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.sig-card:hover .sig-card-img img {
+  transform: scale(1.03);
+}
+
+.sig-card-content {
+  padding-top: 8px;
+}
+
+.sig-card-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 8px 0 12px;
+  line-height: 1.3;
+}
+
+.sig-card-sub {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-gold);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+/* ======================== Lifting Hero Card (featured treatment) ======================== */
+.lifting-hero-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  padding: 48px 0;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+  align-items: start;
+}
+
+.lifting-hero-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-warm-beige);
+}
+
+.lifting-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.lifting-hero-card:hover .lifting-hero-img img {
+  transform: scale(1.03);
+}
+
+.lifting-hero-content {
+  padding-top: 8px;
+}
+
+.lifting-hero-title {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 8px 0 8px;
+  line-height: 1.3;
+}
+
+.lifting-hero-oneliner {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-gold);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* ======================== Treatment Items (accordion) ======================== */
+.treat-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.treat-item-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+}
+
+.treat-item-header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+.treat-item-thumb {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--color-warm-beige);
+}
+
+.treat-item-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.treat-item-en {
+  font-family: var(--font-en);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.treat-item-title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.treat-item-oneliner {
+  font-size: 17px;
+  color: var(--color-text-secondary);
+}
+
+.treat-item-toggle {
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--color-gold);
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Item body */
+.treat-item-body {
+  padding: 0 0 32px 100px;
+}
+
+.treat-item-sub {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-gold);
+  margin-bottom: 16px;
+}
+
+.treat-item-desc {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 20px;
+  max-width: 680px;
+}
+
+.treat-step {
+  margin-bottom: 16px;
+}
+
+.treat-step strong {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-text);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.treat-step p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+
+.treat-bullet-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.treat-bullets {
+  list-style: none;
+  padding: 0;
+}
+
+.treat-bullets li {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  padding-left: 16px;
+  position: relative;
+}
+
+.treat-bullets li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+.treat-note {
+  font-size: 15px;
+  color: var(--color-gold);
+  font-weight: 500;
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(184, 149, 106, 0.08);
+  border-left: 3px solid var(--color-gold);
+}
+
+/* Sub-images grid (inside accordion body) */
+.treat-sub-images {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.treat-sub-images--col2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.treat-sub-images--col3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.treat-sub-image {
+  text-align: center;
+}
+
+.treat-sub-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: var(--color-warm-beige);
+  margin-bottom: 8px;
+}
+
+.treat-sub-image-label {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  display: block;
+}
+
+/* Caution box */
+.treat-caution {
+  background: var(--color-warm-beige);
+  padding: 32px;
+  margin-top: 40px;
+}
+
+.treat-caution h4 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.treat-caution ol {
+  list-style: decimal;
+  padding-left: 20px;
+}
+
+.treat-caution li {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+}
+
+/* Skincare section title */
+.skincare-section-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  margin-top: 32px;
+}
+
+/* Brand grid */
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.brand-card {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+.brand-img {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--color-warm-white);
+}
+
+.brand-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-en {
+  font-family: var(--font-en);
+  font-size: 15px;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.brand-name {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 4px 0 8px;
+}
+
+.brand-desc {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* Extra devices */
+.extra-devices {
+  margin-top: 56px;
+}
+
+.extra-devices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.extra-device-card {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+}
+
+.extra-device-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* ======================== Responsive ======================== */
+@media (max-width: 1023px) {
+  .sig-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .sig-card--reversed {
+    direction: ltr;
+  }
+
+  .lifting-hero-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .brand-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .extra-devices-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .treat-sub-images--col3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .treat-cat-banner {
+    height: 200px;
+  }
+
+  .treat-cat-banner-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .treat-hero {
+    height: 50vh;
+    min-height: 320px;
+  }
+
+  .treat-hero-title {
+    font-size: 28px;
+  }
+
+  .treat-hero-subtitle {
+    font-size: 17px;
+  }
+
+  .treat-tabs-wrap {
+    top: 60px;
+  }
+
+  .treat-tabs {
+    padding: 0 16px;
+  }
+
+  .treat-tab {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+
+  .treat-item-thumb {
+    width: 60px;
+    height: 60px;
+  }
+
+  .treat-item-title {
+    font-size: 17px;
+  }
+
+  .treat-item-body {
+    padding: 0 0 24px 0;
+  }
+
+  .treat-item-desc,
+  .treat-step p,
+  .treat-bullets li {
+    font-size: 17px;
+  }
+
+  .treat-cat-banner {
+    height: 180px;
+  }
+
+  .treat-cat-banner-text {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .treat-cat-banner-title {
+    font-size: 24px;
+  }
+
+  .treat-cat-banner-desc {
+    font-size: 15px;
+  }
+
+  .extra-devices-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .treat-sub-images--col2,
+  .treat-sub-images--col3 {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-card {
+    flex-direction: column;
+  }
+
+  .brand-img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+  }
+}

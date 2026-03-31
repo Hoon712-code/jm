@@ -1,0 +1,167 @@
+/* ======================== Hero ======================== */
+.contact-hero {
+  height: 40vh;
+  min-height: 280px;
+  background: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-hero-inner {
+  text-align: center;
+}
+
+.contact-hero-title {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.3;
+}
+
+/* ======================== Map + Info ======================== */
+.contact-map-section {
+  background: var(--color-warm-white);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-map {
+  width: 100%;
+  min-height: 400px;
+  background: var(--color-warm-beige);
+  overflow: hidden;
+}
+
+.contact-map iframe {
+  display: block;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 16px;
+}
+
+.contact-info-block {
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 24px;
+}
+
+.contact-info-block:last-child {
+  border-bottom: none;
+}
+
+.contact-label {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.contact-info-block p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.contact-info-block a {
+  color: var(--color-text);
+  transition: color 0.3s;
+}
+
+.contact-info-block a:hover {
+  color: var(--color-gold);
+}
+
+/* ======================== Hours ======================== */
+.contact-hours {
+  background: var(--color-warm-beige);
+}
+
+.hours-table-wrap {
+  max-width: 600px;
+  margin: 40px auto 0;
+}
+
+.contact-hours-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.contact-hours-table td {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 18px;
+}
+
+.hours-day {
+  font-weight: 600;
+  color: var(--color-text);
+  width: 40%;
+}
+
+.hours-time {
+  color: var(--color-text-secondary);
+}
+
+/* ======================== CTA ======================== */
+.contact-cta {
+  background: var(--color-black);
+  padding: 80px 0;
+}
+
+.contact-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+/* ======================== Responsive ======================== */
+@media (max-width: 1023px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-map {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-hero {
+    height: 30vh;
+    min-height: 220px;
+  }
+
+  .contact-hero-title {
+    font-size: 32px;
+  }
+
+  .contact-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-cta-buttons .btn-gold,
+  .contact-cta-buttons .btn-outline-white {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .contact-hours-table td {
+    font-size: 17px;
+  }
+}

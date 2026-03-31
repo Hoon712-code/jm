@@ -1,0 +1,405 @@
+/* ======================== Hero ======================== */
+.about-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.about-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.55);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.about-hero-title {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.about-hero-subtitle {
+  font-family: var(--font-sans);
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ======================== Philosophy ======================== */
+.philosophy {
+  background: var(--color-warm-white);
+  text-align: center;
+}
+
+.philosophy-text {
+  max-width: 720px;
+  margin: 40px auto 0;
+}
+
+.philosophy-text p {
+  margin-bottom: 28px;
+}
+
+.philosophy-signature {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--color-gold);
+  margin-top: 16px;
+}
+
+/* ======================== Values ======================== */
+.values {
+  background: var(--color-warm-beige);
+}
+
+.values-list {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.value-item {
+  display: flex;
+  gap: 32px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--color-border);
+  align-items: flex-start;
+}
+
+.value-item:last-child {
+  border-bottom: none;
+}
+
+.value-number {
+  font-family: var(--font-en);
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--color-gold);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 56px;
+}
+
+.value-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.value-desc {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+
+/* ======================== Doctor ======================== */
+.doctor {
+  background: var(--color-warm-white);
+}
+
+.doctor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.doctor-image img {
+  width: 100%;
+  max-width: 480px;
+}
+
+.doctor-subtitle {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-gold);
+  margin-bottom: 32px;
+}
+
+.doctor-profile-block {
+  margin-bottom: 28px;
+}
+
+.profile-row {
+  display: flex;
+  gap: 20px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.profile-label {
+  font-weight: 600;
+  color: var(--color-text);
+  flex-shrink: 0;
+  width: 80px;
+}
+
+.doctor-societies {
+  margin-bottom: 28px;
+}
+
+.doctor-quote {
+  position: relative;
+  padding: 24px 0 24px 24px;
+  border-left: 3px solid var(--color-gold);
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* (cert slider removed) */
+.cert-img {
+  height: 160px;
+  width: auto;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+/* ======================== Facilities ======================== */
+.facilities {
+  background: var(--color-black);
+}
+
+
+
+.devices-heading {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 32px;
+}
+
+.devices-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.device-card {
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.device-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.device-img-wrap {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.device-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.device-info {
+  padding: 12px;
+}
+
+.device-name {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.device-desc {
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.4;
+}
+
+/* ======================== Media ======================== */
+.media {
+  background: var(--color-warm-white);
+}
+
+/* 방송사 로고 그리드 */
+.broadcast-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 48px;
+  margin-bottom: 40px;
+}
+
+.broadcast-grid-item {
+  background: var(--color-warm-beige);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+  aspect-ratio: 16 / 9;
+}
+
+.broadcast-grid-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.media-item {
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--color-warm-beige);
+}
+
+.media-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.media-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  cursor: pointer;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 40px;
+  color: var(--color-white);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ======================== Responsive ======================== */
+@media (max-width: 1023px) {
+  .doctor-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .doctor-image img {
+    max-width: 100%;
+  }
+
+  .broadcast-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .devices-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .about-hero {
+    height: 50vh;
+    min-height: 320px;
+  }
+
+  .about-hero-title {
+    font-size: 32px;
+  }
+
+  .about-hero-subtitle {
+    font-size: 17px;
+  }
+
+  .value-item {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .value-number {
+    width: auto;
+    font-size: 32px;
+  }
+
+  .profile-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .profile-label {
+    width: auto;
+  }
+
+  .broadcast-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .broadcast-grid-item {
+    padding: 12px;
+  }
+
+  .devices-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .media-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cert-img {
+    height: 120px;
+  }
+}
